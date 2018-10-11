@@ -1,4 +1,11 @@
 // 1. Require your node modules
+require('./populateVampires');
+const connectionString = ('mongodb://localhost/test');
+const mongose = require('mongoose');
+const Vamp = require('../test/model-tests');
+const vampire = require('./models/vampire');
+
+
 
 // 2. Require your model (and possibly your extra data source);
 
