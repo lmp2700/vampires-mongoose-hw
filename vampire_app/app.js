@@ -113,13 +113,51 @@ Vampire.create({
 // })
 
 // have greater than 150 AND fewer than 500 victims
-Vampire.find({$and: [{victims:{$gt:150}}, {victims:{$lt:500}}]}, (err, foundVampire) => {
-    if(err){
-        console.log(err);
-    } else {
-        console.log(foundVampire);
-    }
-})
+// Vampire.find({$and: [{victims:{$gt:150}}, {victims:{$lt:500}}]}, (err, foundVampire) => {
+//     if(err){
+//         console.log(err);
+//     } else {
+//         console.log(foundVampire);
+//     }
+// })
+
+// Select all the vampires that:
+// have a title property
+// Vampire.find({title:{$exists:true}}, (err, foundVampire) => {
+//     if(err){
+//         console.log(err);
+//     } else {
+//         console.log(foundVampire);
+//     }
+// })
+
+// do not have a victims property
+// Vampire.find({victims:{$exists:false}}, (err, foundVampire) => {
+//     if(err){
+//         console.log(err);
+//     } else {
+//         console.log(foundVampire);
+//     }
+// })
+
+// have a title AND no victims
+// Vampire.find({$and:[{victims:{$exists:false}},{title:{$exists:true}}]},(err, foundVampire)=>{
+//     if(err){
+//         console.log(err)
+//     } else {
+//         console.log(foundVampire)
+//     }
+// })
+
+// have victims AND the victims they have are greater than 1000
+// Vampire.find({$and:[{victims:{$exists:true}},{victims:{$gt:1000}}]},(err, foundVampire)=>{
+//     if(err){
+//         console.log(err)
+//     } else {
+//         console.log(foundVampire)
+//     }
+// })
+
 
 /////////////////////////////////////////////////
 // ## QUERYING
