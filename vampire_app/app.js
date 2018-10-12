@@ -11,70 +11,71 @@ Vampire.collection.insertMany(vampireArray, (err, data) => {
     mongoose.connection.close();
   });
 
-Vampire.create({
-    name: 'Vlad',
-    hair_color: 'black',
-    eye_color: 'black',
-    dob: new Date(1448, 2, 13, 7, 47),
-    loves: ['blood','stakes'],
-    location: 'Romania',
-    gender: 'm',
-    victims: 2000,
-}, (err, createdVampire) => {
-    if(err) {
-        console.log(err);
-    } else {
-        console.log(createdVampire)
-    }
-});
-Vampire.create({
-    name: 'Radu',
-    hair_color: 'black',
-    eye_color: 'black',
-    dob: new Date(1452, 2, 13, 7, 47),
-    loves: ['food','boys'],
-    location: 'Romania',
-    gender: 'm',
-    victims: 243,
-}, (err, createdVampire) => {
-    if(err) {
-        console.log(err);
-    } else {
-        console.log(createdVampire)
-    }
-});
-Vampire.create({
-    name: 'Meng Die',
-    hair_color: 'black',
-    eye_color: 'brown',
-    dob: new Date(542, 2, 13, 7, 47),
-    loves: ['blood','power'],
-    location: 'Shanghai, China',
-    gender: 'f',
-    victims: 768,
-}, (err, createdVampire) => {
-    if(err) {
-        console.log(err);
-    } else {
-        console.log(createdVampire)
-    }
-});
-Vampire.create({
-    name: 'Gretchen',
-    hair_color: 'blonde',
-    eye_color: 'green',
-    dob: new Date(1763, 2, 13, 7, 47),
-    loves: ['flight','chains'],
-    location: 'German, Europe',
-    gender: 'f',
-    victims: 567,
-}, (err, createdVampire) => {
-    if(err) {
-        console.log(err);
-    } else {
-        console.log(createdVampire)
-    }
-});
+// Vampire.create({
+//     name: 'Vlad',
+//     hair_color: 'black',
+//     eye_color: 'black',
+//     dob: new Date(1448, 2, 13, 7, 47),
+//     loves: ['blood','stakes'],
+//     location: 'Romania',
+//     gender: 'm',
+//     victims: 2000,
+// }, (err, createdVampire) => {
+//     if(err) {
+//         console.log(err);
+//     } else {
+//         console.log(createdVampire)
+//     }
+// });
+// Vampire.create({
+//     name: 'Radu',
+//     hair_color: 'black',
+//     eye_color: 'black',
+//     dob: new Date(1452, 2, 13, 7, 47),
+//     loves: ['food','boys'],
+//     location: 'Romania',
+//     gender: 'm',
+//     victims: 243,
+// }, (err, createdVampire) => {
+//     if(err) {
+//         console.log(err);
+//     } else {
+//         console.log(createdVampire)
+//     }
+// });
+// Vampire.create({
+//     name: 'Meng Die',
+//     hair_color: 'black',
+//     eye_color: 'brown',
+//     dob: new Date(542, 2, 13, 7, 47),
+//     loves: ['blood','power'],
+//     location: 'Shanghai, China',
+//     gender: 'f',
+//     victims: 768,
+// }, (err, createdVampire) => {
+//     if(err) {
+//         console.log(err);
+//     } else {
+//         console.log(createdVampire)
+//     }
+// });
+// Vampire.create({
+//     name: 'Gretchen',
+//     hair_color: 'blonde',
+//     eye_color: 'green',
+//     dob: new Date(1763, 2, 13, 7, 47),
+//     loves: ['flight','chains'],
+//     location: 'German, Europe',
+//     gender: 'f',
+//     victims: 567,
+// }, (err, createdVampire) => {
+//     if(err) {
+//         console.log(err);
+//     } else {
+//         console.log(createdVampire)
+//     }
+// });
+
 
 // Find all the vampires that that are females
 // Vampire.find({gender: 'f'}, (err, foundVampire) => {
@@ -158,6 +159,42 @@ Vampire.create({
 //     }
 // })
 
+
+// --> are from New York, New York, US or New Orleans, Louisiana, US
+// Vampire.find({$or:[{location: 'New York, New York, US'},{location: 'New Orleans, Louisiana, US'}]},(err, foundVampire)=>{
+//     if(err){
+//         console.log(err)
+//     } else {
+//         console.log(foundVampire)
+//     }
+// })
+
+// --> love brooding or being tragic
+// Vampire.find({$or:[{loves: 'brooding'},{loves:'tragic'}]},(err, foundVampire)=>{
+//     if(err){
+//         console.log(err)
+//     } else {
+//         console.log(foundVampire)
+//     }
+// })
+
+// --> have more than 1000 victims or love marshmallows
+// Vampire.find({$or:[{victims: {$gte: 1000}},{loves:'marshmallows'}]},(err, foundVampire)=>{
+//     if(err){
+//         console.log(err)
+//     } else {
+//         console.log(foundVampire)
+//     }
+// })
+
+// --> have red hair or green eyes
+// Vampire.find({$or:[{hair_color: 'red hair'},{eye_color:'green eyes'}]},(err, foundVampire)=>{
+//     if(err){
+//         console.log(err)
+//     } else {
+//         console.log(foundVampire)
+//     }
+// })
 
 /////////////////////////////////////////////////
 // ## QUERYING
