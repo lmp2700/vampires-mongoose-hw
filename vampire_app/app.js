@@ -1,24 +1,83 @@
 // 1. Require your node modules
-require('./populateVampires');
-const connectionString = ('mongodb://localhost/test');
-const mongose = require('mongoose');
-const Vamp = require('../test/model-tests');
-const vampire = require('./models/vampire');
+const vampireArray = require('./populateVampires');
+// const connectionString = ('mongodb://localhost/test');
+const mongoose = require('mongoose');
+// const Vamp = require('../test/model-tests');
+const Vampire = require('./models/vampire');
+const vampireApp = require('./vampire_app')
+
+Vampire.collection.insertMany(vampireArray, (err, data) => {
+    console.log(vampireArray)
+    mongoose.connection.close();
+  });
+
+Vampire.create({
+    name: 'Vlad',
+    hair_color: 'black',
+    eye_color: 'black',
+    dob: new Date(1448, 2, 13, 7, 47),
+    loves: ['blood','stakes'],
+    location: 'Romania',
+    gender: 'm',
+    victims: 2000,
+}, (err, createdVampire) => {
+    if(err) {
+        console.log(err);
+    } else {
+        console.log(createdVampire)
+    }
+});
+Vampire.create({
+    name: 'Radu',
+    hair_color: 'black',
+    eye_color: 'black',
+    dob: new Date(1452, 2, 13, 7, 47),
+    loves: ['food','boys'],
+    location: 'Romania',
+    gender: 'm',
+    victims: 243,
+}, (err, createdVampire) => {
+    if(err) {
+        console.log(err);
+    } else {
+        console.log(createdVampire)
+    }
+});
+Vampire.create({
+    name: 'Meng Die',
+    hair_color: 'black',
+    eye_color: 'brown',
+    dob: new Date(542, 2, 13, 7, 47),
+    loves: ['blood','power'],
+    location: 'Shanghai, China',
+    gender: 'f',
+    victims: 768,
+}, (err, createdVampire) => {
+    if(err) {
+        console.log(err);
+    } else {
+        console.log(createdVampire)
+    }
+});
+Vampire.create({
+    name: 'Gretchen',
+    hair_color: 'blonde',
+    eye_color: 'green',
+    dob: new Date(1763, 2, 13, 7, 47),
+    loves: ['flight','chains'],
+    location: 'German, Europe',
+    gender: 'f',
+    victims: 567,
+}, (err, createdVampire) => {
+    if(err) {
+        console.log(err);
+    } else {
+        console.log(createdVampire)
+    }
+});
 
 
 
-// 2. Require your model (and possibly your extra data source);
-
-// 3. Connect your database and collection name
-
-// 4. Open your mongoose connection
-
-/////////////////////////////////////////////////
-//Write your answers to add, query, update, remove, and Hungry for More below.
-
-// Note: Remember to close your connection after you add, update, remove from your database
-/////////////////////////////////////////////////
-/////////////////////////////////////////////////
 // INSERT USING MONGOOSE
 // ### Add the vampire data that we gave you
 
