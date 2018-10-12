@@ -76,12 +76,50 @@ Vampire.create({
     }
 });
 
+// Find all the vampires that that are females
+// Vampire.find({gender: 'f'}, (err, foundVampire) => {
+//     if(err){
+//         console.log(err);
+//     } else {
+//         console.log(foundVampire);
+//     }
+// })
 
+// have greater than 500 victims
+// Vampire.find({victims: {$gte:500}}, (err, foundVampire) => {
+//     if(err){
+//         console.log(err);
+//     } else {
+//         console.log(foundVampire);
+//     }
+// })
 
-// INSERT USING MONGOOSE
-// ### Add the vampire data that we gave you
+// have fewer than or equal to 150 victims
+// Vampire.find({victims: {$lte:150}}, (err, foundVampire) => {
+//     if(err){
+//         console.log(err);
+//     } else {
+//         console.log(foundVampire);
+//     }
+// })
 
-// ### Add some new vampire data
+// have a victim count is not equal to 210234
+// Vampire.find({victims: {$nin:210234}}, (err, foundVampire) => {
+//     if(err){
+//         console.log(err);
+//     } else {
+//         console.log(foundVampire);
+//     }
+// })
+
+// have greater than 150 AND fewer than 500 victims
+Vampire.find({$and: [{victims:{$gt:150}}, {victims:{$lt:500}}]}, (err, foundVampire) => {
+    if(err){
+        console.log(err);
+    } else {
+        console.log(foundVampire);
+    }
+})
 
 /////////////////////////////////////////////////
 // ## QUERYING
